@@ -1,0 +1,31 @@
+<script>
+    $(document).ready(function () {
+        let yourKeywords = {
+          
+            /* Add your keywords and associated descriptions below.*/
+            "YourKeyword1": "A description for YourKeyword1.",
+            "YourKeyword2": "A description for YourKeyword2.",
+            "YourKeyword3": "A description for YourKeyword3.",
+          
+        };
+        $('strong').each(function () {
+            let keyword = $(this).text().trim();
+            if (yourKeywords.hasOwnProperty(keyword)) {
+                let tooltipText = yourKeywords[keyword];
+                $(this).attr('data-tooltip', tooltipText);
+                $(this).addClass('tooltip-trigger');
+            }
+        });
+        $('.tooltip-trigger').hover(function () {
+            let tooltipText = $(this).attr('data-tooltip');
+            if (tooltipText) {
+                $(this).append('<span class="tooltip">' + tooltipText + '</span>');
+                $('.tooltip').fadeIn();
+            }
+        }, function () {
+            $('.tooltip').fadeOut(function () {
+                $(this).remove();
+            });
+        });
+    });
+</script>
