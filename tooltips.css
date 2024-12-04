@@ -1,0 +1,24 @@
+.tooltip {
+    background-color: black; /*change colour of background*/
+    color: white; /*change color of text*/
+    display: none;
+    width: 200px;
+    position: absolute;
+    left: 0;
+    top: 1.4rem;
+    padding: 10px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    font-size: 12px;
+    z-index: 999;
+}
+
+.tooltip-trigger {
+    position: relative;
+    cursor: help;
+}
+
+.tooltip-trigger:hover {
+    text-decoration: underline;
+}
